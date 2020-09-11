@@ -4,7 +4,7 @@ import time
 import sys
 db_host = sys.argv[1]
 
-con = psycopg2.connect(database='orders', user='master',password='master123', host=db_host)
+con = psycopg2.connect(database='postgres', user='master',password='master123', host=db_host)
 cur = con.cursor()
 con.set_session(autocommit=True)
 query_create_table = "create table orders2 (order_id SERIAL PRIMARY KEY, product_id integer, total_price integer, customer_id integer, created_at TIMESTAMP)"
